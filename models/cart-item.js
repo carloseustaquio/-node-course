@@ -2,17 +2,16 @@ const Sequelize = require("sequelize");
 
 const sequelize = require("../util/database");
 
-// Cria carrinho, que possui apenas o id.
-// Relação entre carrinhos e produtos será
-// implementada em classe CartItem.
+// Classe que faz relação entre id dos carrinhos, produtos e quantidade.
 
-const Cart = sequelize.define("cart", {
+const CartItem = sequelize.define("cartItem", {
   id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
     allowNull: false,
     primaryKey: true
-  }
+  },
+  quantity: Sequelize.INTEGER
 });
 
-module.exports = Cart;
+module.exports = CartItem;
